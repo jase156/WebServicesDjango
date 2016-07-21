@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Inicio</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-resource.min.js"></script>
+		<script src="js/consumir.js"></script>
+	</head>
+	<body ng-app="app">
+		<div ng-controller="controlador">
+			<center>
+				<center>
+					<div class="container">
+						<div class="well well-lg">
+							<p class="text-center">
+								Inicio	
+							</p>
+						</div>
+					</div>
+				</center>
+				<form class="form-inline" role="form" ng-submit="validar()">
+					CEDULA:<input type="text" ng-model="cedula"><br><br>
+					<input type="submit" value="validar" class="btn btn-success">
+				</form>	
+				<div class="container">
+				<div class="well well-lg">
+					<p class="text-center">
+					<strong>Carrera de Ingenieria en Sistemas</strong></br>
+					Quinto Ciclo Paralelo "A"</br>
+					2016
+					</p>
+				</div>
+			</center>
+			<!--<p>Estas son las cedulas de los estudiantes que estan ingresados</p>-->
+			{{lista_alumnos}}
+		</div>		  
+	</body>
+</html>

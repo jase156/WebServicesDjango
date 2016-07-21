@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Materias</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-resource.min.js"></script>
+	<script src="js/consumir.js"></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="controlador">
+	<center>
+		<h4 class="alert alert-info">
+			<strong>LISTADO DE MATERIAS</strong>
+		</h4>
+	</center>
+	
+	<br>
+	<label>
+		<strong>BUSCAR:</strong>
+	</label>
+	<input type="text" name="buscar" placeholder="Buscar" ng-model="busqueda"></input>
+	<br> <br>
+
+	<table class="table table-hover">
+			<tr>
+				<th>NOMBRE</th>
+				<th>NUMEROS DE HORAS</th>
+				<th>CREDITOS</th>
+				<th>CUPOS</th>
+				<th>MATRICULADOS</th>	
+			</tr>
+			<tr ng-repeat="datos in lista_materias | filter:busqueda">
+				<td>{{datos.nombre}}</td>
+				<td>{{datos.horas}}</td>
+				<td>{{datos.creditos}}</td>
+				<td>{{datos.numcupos}}</td>
+				<td>{{datos.num_Estudiantes}}</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
