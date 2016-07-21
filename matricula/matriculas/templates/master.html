@@ -1,0 +1,26 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paguina de registros</title>
+	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+	<center>
+		{%include "header.html"%}
+		<div class="container">			
+			{%if messages%}
+				{% for msg in messages %}      
+					<div class="alert alert-{{msg.level_tag}}" role="alert">
+						{{msg.message}}
+					</div>
+				{%endfor%}
+			{%endif%}
+			{%block contenido%}
+			{%endblock%}
+
+		</div>
+		{%include "footer.html"%}
+	</center>
+</body>
+</html>
